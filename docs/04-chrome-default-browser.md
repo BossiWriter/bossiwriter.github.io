@@ -11,11 +11,13 @@ third_party_tools: ["EdgeDeflector"]
 
 This guide explains how to change Windows 11’s default browser from Microsoft Edge to Google Chrome, including workarounds for system-enforced Edge behaviors.
 
-> [!NOTE]
-> The following steps require a third-party tool that may stop working after major Windows updates.
+:::note
+The following steps require a third-party tool that may stop working after major Windows updates.
+:::
 
-> [!WARNING]
-> This was written in 2022. Instructions and information might be outdated.
+:::warning
+This was written in 2022. Instructions and information might be outdated.
+:::
 
 ## Changing Your Default Browser to Chrome
 
@@ -49,8 +51,9 @@ This guide explains how to change Windows 11’s default browser from Microsoft 
 
 8. Repeat steps 5, 6, and 7 for all necessary file associations.
 
-> [!TIP]
-> It's recommended to change the default settings for **.htm**, **.html**, and **.pdf** extensions.
+:::tip
+It's recommended to change the default settings for **.htm**, **.html**, and **.pdf** extensions.
+:::
 
 ## Changing Your Default Browser to Chrome for Widgets and Search
 
@@ -58,8 +61,9 @@ Due to Windows 11 design restrictions, changing the default browser for widgets 
 
 To change the default browser for widgets, a free external software is required.
 
-> [!NOTE]
-> The following steps require a third-party tool that may stop working after major Windows updates. 
+:::note
+The following steps require a third-party tool that may stop working after major Windows updates. 
+:::
 
 1. Download [EdgeDeflector](https://github.com/da2x/EdgeDeflector/releases).
 

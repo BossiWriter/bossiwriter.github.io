@@ -48,8 +48,9 @@ The shift toward AI-driven security has created high-demand specializations with
 
 Below is a breakdown of key roles and their average annual salaries in the US.
 
-> [!IMPORTANT]
-> [Glassdoor](https://www.glassdoor.com), [Indeed](https://www.indeed.com).
+:::important
+[Glassdoor](https://www.glassdoor.com), [Indeed](https://www.indeed.com).
+:::
 
 ### A. Cybersecurity Analyst
 
@@ -81,8 +82,9 @@ Below is a breakdown of key roles and their average annual salaries in the US.
 
 * **Salary Range:** [$146,000 – $244,000](https://www.glassdoor.com/Salaries/ai-ml-engineer-salary-SRCH_KO0,14.htm)
 
-> [!NOTE]
-> Typical ranges vary depending on region and seniority.
+:::note
+Typical ranges vary depending on region and seniority.
+:::
 
 ---
 

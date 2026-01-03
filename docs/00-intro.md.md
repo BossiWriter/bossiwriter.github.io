@@ -25,21 +25,21 @@ My repository has samples from different documentation types following industry 
 
 It'll be consistently updated with more content, but these are the current highlights:
 
-### 1. [Troubleshooting: Windows 11 Secure Boot Error](./windows-secureboot-troubleshooting)
-
-* **Goal:** Solving "This PC can't run Windows 11" error.
-
-* **Highlights:** Clear diagnostic logic and structure, concise troubleshooting steps, risk management, and verification.
-
-* **Target Audience:** General users and IT technicians.
-
-### 2. [Technical Reference: Essential Linux Commands](./linux-commands-reference)
+### 1. [Technical Reference: Essential Linux Commands](./linux-commands-reference)
 
 * **Goal:** Creating a quick-start guide for CLI navigation.
 
 * **Highlights:** Scannable structure with tables, categorization, and contextualization.
 
 * **Target Audience:** Junior Developers, SysAdmins, and Beginner Linux users.
+
+### 2. [Troubleshooting: Windows 11 Secure Boot Error](./windows-secureboot-troubleshooting)
+
+* **Goal:** Solving "This PC can't run Windows 11" error.
+
+* **Highlights:** Clear diagnostic logic and structure, concise troubleshooting steps, risk management, and verification.
+
+* **Target Audience:** General users and IT technicians.
 
 ### 3. [Industry Research: AI-Driven Cybersecurity](./cybersecurity-microsoft-ai)
 

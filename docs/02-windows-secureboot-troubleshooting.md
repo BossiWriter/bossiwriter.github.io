@@ -11,12 +11,13 @@ topics: ["Windows 11", "Secure Boot", "UEFI", "MBR2GPT"]
 
 Windows 11 installation requires that users enable Trusted Platform Module [(TPM)](https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/trusted-platform-module-overview) and [Secure Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/trusted-boot) before installing Windows 11.
 
-> [!NOTE]
-> This guide focuses specifically on Secure Boot-related causes and does not cover TPM 2.0 configuration.
+:::note
+This guide focuses specifically on Secure Boot-related causes and does not cover TPM 2.0 configuration.
+:::
 
-> [!WARNING]
-> This was written in 2022. Instructions and information might be outdated.
-
+:::warning
+This was written in 2022. Instructions and information might be outdated.
+:::
 
 ---
 
@@ -109,8 +110,9 @@ Your system should restart and open the BIOS. Once inside the BIOS:
 
 5. Select **Save Changes and Exit** to reboot.
 
-> [!TIP]
-> You can also manually access the BIOS by pressing the BIOS key when booting up (e.g., **Delete**, **Esc**, **F10**, or **F12**). You can check your motherboard manual for the corresponding key if necessary.
+:::tip
+You can also manually access the BIOS by pressing the BIOS key when booting up (e.g., **Delete**, **Esc**, **F10**, or **F12**). You can check your motherboard manual for the corresponding key if necessary.
+:::
 
 ## 6. Verification
 

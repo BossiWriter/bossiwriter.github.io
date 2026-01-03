@@ -31,8 +31,9 @@ To ensure clarity for the reader, this reference guide is defined by the followi
 
 This is a reference guide targeted at new Linux users. It lists useful and commonly used commands to navigate and manage files using the Linux Terminal.
 
-> [!TIP]
-> Examples will focus on the path `/home/username` for consistency.
+:::tip
+Examples will focus on the path `/home/username` for consistency.
+:::
 
 ## 1. File and Directory Management
 
@@ -53,8 +54,9 @@ Used to view all files and folders inside the current directory.
 | **`-h`** | Human-readable | When used with `-l`, it shows file sizes in KB, MB, or GB. |
 | **`-R`** | Recursive | Lists all files in the current directory and all subdirectories. |
 
-> [!TIP]
-> You can combine flags. For example, `ls -lah` provides a detailed, human-readable list of all files.
+:::tip
+You can combine flags. For example, `ls -lah` provides a detailed, human-readable list of all files.
+:::
 
 ### `cd` - Change Directory
 Navigates between different folders in the file system.
@@ -101,8 +103,9 @@ Searches for a specific text string within a file.
 
 * **Usage:** `grep "index" /home/username/Desktop/NewDirectory/file_list.txt`
 
-> [!TIP]
-> Combine with other commands using pipes to filter outputs (e.g., `ls /home/username/Desktop | grep ".png"`)
+:::tip
+Combine with other commands using pipes to filter outputs (e.g., `ls /home/username/Desktop | grep ".png"`)
+:::
 
 ---
 
