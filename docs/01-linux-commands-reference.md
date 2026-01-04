@@ -13,6 +13,7 @@ non_goals: ["Shell scripting", "Advanced permissions", "Package management"]
 # Essential Linux Commands for Beginners: A Technical Reference
 
 ## Table of Contents
+
 * [1. File and Directory Management](#1-file-and-directory-management)
 * [2. File Operations](#2-file-operations)
 * [3. Viewing and Searching Content](#3-viewing-and-searching-content)
@@ -84,8 +85,9 @@ Creates a new, empty directory.
 | **`rm`** | Deletes files. Use with caution. | `rm file_name` |
 | **`touch`** | Creates a new empty file or updates the timestamp of an existing one. | `touch index.html` |
 
-> [!CAUTION]
-> Files deleted with `rm` cannot be recovered.
+:::caution
+Files deleted with `rm` cannot be recovered.
+:::
 
 ---
 
