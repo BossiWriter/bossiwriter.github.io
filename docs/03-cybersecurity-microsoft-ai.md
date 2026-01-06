@@ -7,6 +7,7 @@ focus: "Markdown Adaptation"
 tags: ["AI", "Cybersecurity", "Microsoft", "Career"]
 audience: ["IT professionals", "Security practitioners", "Career switchers"]
 content_type: "Industry Research / Career Guide"
+sidebar_label: "AI Cybersecurity Research"
 ---
 
 # Microsoft’s AI-Driven Cybersecurity: Strategies, Roles, and Career Path
