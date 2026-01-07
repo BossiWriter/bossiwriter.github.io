@@ -66,15 +66,15 @@ Before making changes, verify whether or not the issue is related to  **Secure B
 
 ```mermaid 
 graph TD
-    A[Iniciar Diagnóstico] --> B{BIOS Mode?}
-    B -- Legacy --> C[Converter MBR para GPT]
-    C --> D[Acessar BIOS/UEFI]
+    A[Start Diagnostics] --> B{BIOS Mode?}
+    B -- Legacy --> C[Convert MBR to GPT]
+    C --> D[Access BIOS/UEFI]
     B -- UEFI --> E{Secure Boot State?}
     E -- Off --> D
-    E -- On --> F[Erro não é Secure Boot - Verifique TPM]
-    D --> G[Habilitar Secure Boot]
-    G --> H[Verificação Final]
-    H --> I[Pronto para Windows 11]
+    E -- On --> F[Issue is not Secure Boot - Check TPM 2.0]
+    D --> G[Enable Secure Boot]
+    G --> H[Final Verification]
+    H --> I[Ready for Windows 11]
  ```
 
 ---
