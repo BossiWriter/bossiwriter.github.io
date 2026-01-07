@@ -14,7 +14,7 @@ sidebar_label: "Windows 11 Troubleshooting"
 Windows 11 installation requires that users enable Trusted Platform Module [(TPM)](https://learn.microsoft.com/en-us/windows/security/hardware-security/tpm/trusted-platform-module-overview) and [Secure Boot](https://learn.microsoft.com/en-us/windows/security/operating-system-security/system-security/trusted-boot) before installing Windows 11.
 
 :::note
-This guide focuses specifically on Secure Boot-related causes and does not cover TPM 2.0 configuration.
+This guide is about Secure Boot-related causes and does not cover TPM 2.0 configuration.
 :::
 
 :::warning
@@ -34,9 +34,9 @@ This was written in 2022. Instructions and information might be outdated.
 
 ## 1. Issue Description
 
-If you run into the error message **"This PC doesn't meet the minimum system requirements."** when trying to update or install Windows 11, this might be a Secure Boot issue.
+If the error message **"This PC doesn't meet the minimum system requirements."** shows when trying to update or install Windows 11, this might be a Secure Boot issue.
 
-The error can be due to a disabled BIOS setting or an outdated partition style (**MBR**) that prevents UEFI features from working, thus blocking Windows 11 from installing properly.
+The error can be due to a disabled BIOS setting or an outdated partition style (**MBR**) that prevents UEFI features from working, which blocks Windows 11 from installing properly.
 
 ---
 
@@ -44,17 +44,17 @@ The error can be due to a disabled BIOS setting or an outdated partition style (
 
 Before making changes, verify whether or not the issue is related to  **Secure Boot.**
 
-1. **Click** on the **Windows Start** button.
+1. Select the **Start** button.
 
-2. Type **System Information** on the search bar.
+2. Type `System Information` on the search box.
 
-3. Click **System Information** on the **Best match** menu.
+3. Under the **Best match** menu, select **System Information**
 
-4. Click **System Summary** at the top left of the **System Information** window.
+4. At the top left of the **System Information** window, select **System Summary**.
 
-5. Locate **Secure Boot State** on the **Item** column to the right.
+5. Search for **Secure Boot State** on the **Item** column to the right.
 
-6. Locate **BIOS Mode** on the **Item** column to the right.
+6. Search for **BIOS Mode** on the **Item** column to the right.
 
 
 :::note
@@ -64,13 +64,26 @@ Before making changes, verify whether or not the issue is related to  **Secure B
 * If **Secure Boot State** is **Off** and **BIOS Mode** is **UEFI**, follow the instructions below to enable it.
 :::
 
+```mermaid 
+graph TD
+    A[Iniciar Diagnóstico] --> B{BIOS Mode?}
+    B -- Legacy --> C[Converter MBR para GPT]
+    C --> D[Acessar BIOS/UEFI]
+    B -- UEFI --> E{Secure Boot State?}
+    E -- Off --> D
+    E -- On --> F[Erro não é Secure Boot - Verifique TPM]
+    D --> G[Habilitar Secure Boot]
+    G --> H[Verificação Final]
+    H --> I[Pronto para Windows 11]
+ ```
+
 ---
 
 ## 3. Root Cause: Legacy Partition Styles
 
 Before enabling **Secure Boot**, you need the correct partition style on your drive.
 
-If your **BIOS Mode** is listed as **Legacy**, your disk is likely using the **MBR (Master Boot Record)** partition style. 
+If  **BIOS Mode** is listed as **Legacy**, the disk is likely using the **MBR (Master Boot Record)** partition style.
 
 Modern **Secure Boot** requires the **GPT (GUID Partition Table)** style. You must convert the disk before enabling **Secure Boot** in the BIOS.
 
@@ -78,53 +91,55 @@ Modern **Secure Boot** requires the **GPT (GUID Partition Table)** style. You mu
 
 ## 4. MBR to GPT Partition Conversion
 
-If **BIOS Mode** is set to **Legacy**, you need to convert your drive from **MBR** to **GPT**.
+If **BIOS Mode** is set to **Legacy**, then convert your drive from **MBR** to **GPT**.
 
-> **Warning:** Although the **mbr2gpt** tool is designed to preserve data, always **backup your files** before modifying partition structures.
+:::warning
+Although the `mbr2gpt` tool is designed to preserve data, always **backup your files** before modifying partition structures.
+:::
 
-1. Go to **Settings > Update & Security > Recovery**.
+1. Navigate to **Settings > Update & Security > Recovery**.
 
-2. Under **Advanced startup**, click **Restart now**.
+2. Select **Restart now** under **Advanced startup**.
 
-3. After reboot, navigate to **Troubleshoot > Advanced options > Command Prompt**.
+3. After rebooting, navigate to **Troubleshoot > Advanced options > Command Prompt**.
 
-4. Run the validation command: `mbr2gpt /validate`
+4. Run the validation command `mbr2gpt /validate`.
 
-5. If the terminal returns `Validation completed successfully`, then run the conversion: `mbr2gpt /convert`
+5. If the terminal returns `Validation completed successfully`, then run the conversion `mbr2gpt /convert`.
 
 6. Type `exit` and press **Enter** to restart the system.
 
 ## 5. Enabling Secure Boot in UEFI
 
-Once the current drive is set to GPT, you can proceed to enabling **Secure Boot**.
+Once the current drive is set to GPT, proceed to enable **Secure Boot**.
 
 :::warning
-Enabling Secure Boot requires accessing your motherboard's BIOS/UEFI settings. Any incorrect configuration in this environment can prevent your system from booting. Do not change any settings other than those strictly mentioned in this guide unless you are an experienced user.
+Enabling Secure Boot requires accessing the motherboard's BIOS/UEFI settings. Any incorrect configuration in this environment can prevent the system from booting. Do not change any settings other than those strictly mentioned in this guide unless you are an experienced user.
 :::
 
-1. **Click** on **Windows Start** button.
+1. Select the **Start** button.
 
-2. **Click** on **Settings**.
+2. Select **Settings**.
 
 3. Navigate to **Update & Security > Recovery**.
 
-4. **Click Advanced Startup** under **Restart now**.
+4. Under **Advanced Startup**, select **Restart now**.
 
-5. **Click** on **UEFI Firmware Settings.**
+5. Select  **UEFI Firmware Settings**.
 
 6. Select **Restart**.
 
-Your system should restart and open the BIOS. Once inside the BIOS:
+The system should restart and open the BIOS. Once inside the BIOS:
 
 1. Navigate to the **Security** or **Boot** tab.
 
-2. Navigate to the **Secure Boot** option and press **Enter.**
+2. Select **Secure Boot** and press **Enter**.
 
 3. Select **Enabled** and press **Enter**.
 
 4. Navigate to the **Exit** tab.
 
-5. Select **Save Changes and Exit** to reboot.
+5. Select **Save Changes and Exit** and press **Enter** to reboot.
 
 :::tip
 You can also manually access the BIOS by pressing the BIOS key when booting up (e.g., **Delete**, **Esc**, **F10**, or **F12**). You can check your motherboard manual for the corresponding key if necessary.

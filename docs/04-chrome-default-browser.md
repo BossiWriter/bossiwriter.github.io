@@ -24,31 +24,31 @@ This was written in 2022. Instructions and information might be outdated.
 
 ## Changing Your Default Browser to Chrome
 
-1. Click the **Start** button on your taskbar.
+1. Select the **Start** button.
 
 ![Windows Start button highlighted in green on the task bar.](/img/step1.png)
 
-2. Search for **Default apps**.
+2. Search `Default apps`.
 
-![Windows Start Menu Search Bar with 'default apps' written and highlighted in green.](/img/step2.png)
+![Windows Start Menu Search Box with 'default apps' written and highlighted in green.](/img/step2.png)
 
-3. Click on the best match called **Default apps** from **System settings**.
+3. Under **Best matches**, select **Default apps**
 
 ![Windows Start Menu Best Match with 'Default apps' highlighted in green.](/img/step3.png)
 
-4. Click on **Google Chrome** towards the bottom of the list.
+4. Select **Google Chrome**.
 
 ![Windows Default Apps with Google Chrome highlighted in green.](/img/step4.png)
 
-5. Click on **HTTPS** towards the bottom of the list.
+5. Select **HTTPS**.
 
 ![Windows Default Apps Google Chrome page with 'HTTPS Microsoft Edge' highlighted in green.](/img/step5.png)
 
-6. Select **Google Chrome** from the list.
+6. Select **Google Chrome**.
 
 ![Windows Menu 'How do you want to open this?' with 'Google Chrome' highlighted in blue.](/img/step6.png)
 
-7. Click **OK** to change the default browser.
+7. Select **OK**.
 
 ![Windows Menu 'How do you want to open this?' with the 'OK' button highlighted in green.](/img/step7.png)
 
@@ -68,39 +68,39 @@ To change the default browser for widgets, a free external software is required.
 The following steps require a third-party tool that may stop working after major Windows updates. 
 :::
 
-1. Download [EdgeDeflector](https://github.com/da2x/EdgeDeflector/releases).
+1. Download the [**EdgeDeflector**](https://github.com/da2x/EdgeDeflector/releases) installer.
 
 ![ website with the software installer highlighted in green.](/img/step1-1.png)
 
-2. Open the file.
+2. Run the **EdgeDeflector** installer.
 
 ![Windows context menu for downloaded file with the 'Open' option highlighted in green.](/img/step1-2.png)
 
-3. Click the **Start** button on your taskbar.
+3. Select the **Start** button.
 
 ![Windows Start button highlighted in green on the task bar.](/img/step1-3.png)
 
-4. Search for **Default apps**.
+4. Search `Default apps`.
 
-![Windows Start Menu Search Bar with 'default apps' written and highlighted in green.](/img/step1-4.png)
+![Windows Start Menu Search Box with 'default apps' written and highlighted in green.](/img/step1-4.png)
 
-5. Click on the best match called **Default apps** from **System settings**.
+5. Under **Best matches**, select **Default apps**
 
 ![Windows Start Menu Best Match with 'Default apps' highlighted in green.](/img/step1-5.png)
 
-6. Click on **EdgeDeflector** towards the bottom of the list.
+6. Select **EdgeDeflector**.
 
 ![Windows 'Default apps' page with EdgeDeflector highlighted in green.](/img/step1-6.png)
 
-7. Click on **Microsoft Edge**.
+7. Select **Microsoft Edge**.
 
 ![Windows 'Default apps' page with 'MICROSOFT-EDGE' highlighted in green.](/img/step1-7.png)
 
-8. Select **EdgeDeflector** from the list.
+8. Select **EdgeDeflector**.
 
 ![Windows Menu 'How do you want to open this?' with 'EdgeDeflector' highlighted in blue.](/img/step1-8.png)
 
-9.  Click **OK** to confirm the change.
+9.  Select **OK**.
 
 ![Windows Menu 'How do you want to open this?' with the 'OK' button highlighted in green.](/img/step1-9.png)
 

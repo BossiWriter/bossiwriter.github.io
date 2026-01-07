@@ -41,7 +41,7 @@ Examples will focus on the path `/home/username` for consistency.
 
 ### `ls` - List Directory Contents
 
-Used to view all files and folders inside the current directory.
+Lists all files and folders inside the current directory.
 
 * **Usage:** `ls [options]`
 
@@ -107,7 +107,7 @@ Searches for a specific text string within a file.
 * **Usage:** `grep "index" /home/username/Desktop/NewDirectory/file_list.txt`
 
 :::tip
-Combine with other commands using pipes to filter outputs (e.g., `ls /home/username/Desktop | grep ".png"`)
+Combine `grep` with other commands using pipes to filter outputs (e.g., `ls /home/username/Desktop | grep ".png"`)
 :::
 
 ---
