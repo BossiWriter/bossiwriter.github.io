@@ -2,6 +2,7 @@
 sidebar_position: 2
 sidebar_label: "Quick Start"
 title: "Quick Start"
+slug: /quick-start
 ---
 
 import Tabs from '@theme/Tabs';

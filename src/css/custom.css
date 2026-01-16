@@ -1,10 +1,11 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global CSS (Docusaurus / Infima)
  */
 
-/* You can override the default Infima variables here. */
+/* =========================
+   1) THEME (Infima variables)
+   ========================= */
+
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -13,11 +14,11 @@
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
+
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
@@ -26,37 +27,148 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* 1. FORMATO DO SELO: Adicione aqui o nome de qualquer arquivo que terá um selo */
-.menu__link[href*="list-issues"]::before {
-  display: inline-block;
-  /* Aumentamos o padding: 4px em cima/baixo e 8px nas laterais para a pílula crescer */
-  padding: 4px 8px; 
-  border-radius: 6px; /* Aumentado levemente para acompanhar o novo tamanho */
-  font-family: 'Fira Code', monospace;
-  /* Aumentamos a fonte: de 0.65rem para 0.8rem (mais legível) */
-  font-size: 0.8rem; 
-  font-weight: bold;
-  margin-right: 10px; /* Aumentamos o espaço entre o selo e o texto */
-  line-height: 1;
-  vertical-align: middle;
-}
+/* =========================
+   2) SIDEBAR: "GET" badge for list-issues link
+   ========================= */
 
 .menu__link[href*="list-issues"]::before {
-  content: 'GET';
-  background-color: #10b981; /* Verde */
-  color: white;
+  content: "GET";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 8px;
+  margin-right: 10px;
+
+  border-radius: 6px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: middle;
+
+  background-color: #10b981;
+  color: #fff;
 }
+
+/* =========================
+   3) SIDEBAR: section divider label (your manual separators)
+   ========================= */
 
 .sidebar__section {
   margin: 16px 0 8px;
   padding: 8px 12px 6px;
+
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0.75;
+
   border-top: 1px solid var(--ifm-toc-border-color);
 }
+
+/* =========================
+   4) CTA CARDS (Start Here page)
+   ========================= */
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 16px 0 8px;
+}
+
+@media (max-width: 996px) {
+  .ctaGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ctaCard {
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color);
+  border-radius: 12px;
+  padding: 16px;
+
+  /* key: forces consistent layout + button at the bottom */
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.ctaCard h3 {
+  margin-bottom: 8px;
+}
+
+.ctaCard p {
+  margin: 0 0 10px;
+}
+
+/* optional wrapper if you use a <div class="ctaBtnRow"> */
+.ctaBtnRow {
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+/* =========================
+   5) CTA BUTTONS
+   - Important: style on top of Docusaurus "button" classes
+   ========================= */
+
+.button.ctaBtn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  height: 50px !important;
+  padding: 0 16px !important;
+  line-height: 1 !important;
+  font-size: 1.05rem;
+  font-weight: 600 !important;
+  border-radius: 10px;
+
+  box-sizing: border-box !important;
+}
+
+
+/* Green (skills) */
+.button.ctaBtn--green {
+  background: #10b981;
+  border-color: #10b981;
+  color: #0b0f0e;
+}
+.button.ctaBtn--green:hover {
+  background: #0ea271;
+  border-color: #0ea271;
+  color: #0b0f0e;
+}
+
+/* Blue (methodology) */
+.button.ctaBtn--blue {
+  background: var(--ifm-color-info);
+  border-color: var(--ifm-color-info);
+  color: var(--ifm-color-white);
+}
+.button.ctaBtn--blue:hover {
+  background: var(--ifm-color-info-dark);
+  border-color: var(--ifm-color-info-dark);
+  color: var(--ifm-color-white);
+}
+
+/* White (about) */
+.button.ctaBtn--white {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #111;
+}
+.button.ctaBtn--white:hover {
+  background: #ffffff;
+  border-color: rgba(255, 255, 255, 0.30);
+  color: #111;
+}
+
