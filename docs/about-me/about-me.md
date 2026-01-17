@@ -4,8 +4,6 @@ slug: /about-me
 title: "About Me"
 ---
 
-Broken link test: https://httpstat.us/404
-
 ## Who I Am
 
 I'm Emerson Bossi, a bilingual (PT-BR/EN) technical writer and IT professional with a love for turning complex subjects into clear, accessible information. I have over 11 years of combined experience across IT, technical support, content creation, and AI training on top of my 3 years of Computer Science.
