@@ -74,67 +74,59 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Emerson Bossi',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Projects',
-          },
-          {
-            href: 'https://github.com/bossiwriter/bossiwriter.github.io',
-            label: 'GitHub',
-            position: 'right',
-          },
-        ],
-      },
+  title: 'Emerson Bossi - Technical Writer',
+  items: [
+    // Search na esquerda
+    { type: 'search', position: 'left' },
+
+    // Rotas principais (esquerda)
+    { to: '/', label: 'Start Here', position: 'left' },
+    { to: '/github-api-doc/guides/overview', label: 'GitHub API Docs', position: 'left' },
+    { to: '/behind-the-docs', label: 'Case Studies', position: 'left' },
+    { to: '/secureboot-troubleshooting', label: 'Technical Documentation', position: 'left' },
+    { to: '/about-me', label: 'About Me', position: 'left' },
+    { to: '/documentation-approach', label: 'Documentation Approach', position: 'left' },
+
+    // GitHub (direita)
+    {
+      href: 'https://github.com/BossiWriter/bossiwriter.github.io',
+      label: 'GitHub',
+      position: 'right',
+    },
+  ],
+},
+
       footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-             
-              {
-                label: 'GitHub',
-                href: 'https://github.com/bossiwriter/bossiwriter.github.io',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Emerson Bossi. Built with Docusaurus.`,
-      },
+  style: 'dark',
+  links: [
+    {
+      title: 'Portfolio',
+      items: [
+        { label: 'Start Here', to: '/' },
+        { label: 'GitHub API Docs', to: '/github-api-doc/guides/overview' },
+        { label: 'Case Studies', to: '/case-studies/behind-the-docs' },
+        { label: 'Technical Documentation', to: '/documentation-samples' },
+      ],
+    },
+    {
+      title: 'Profile',
+      items: [
+        { label: 'About Me', to: '/about-me' },
+        { label: 'Documentation Approach', to: '/documentation-approach' },
+      ],
+    },
+    {
+      title: 'Contact',
+      items: [
+        { label: 'LinkedIn - /in/bossiwriter', href: 'https://www.linkedin.com/in/bossiwriter' },
+        { label: 'Email - bossiwriter@gmail.com', href: 'mailto:bossiwriter@gmail.com' },
+        { label: 'Wix Portfolio Hub', href: 'https://bossiwriter.wixsite.com/content-writer' },
+      ],
+    },
+  ],
+  copyright: `Copyright © ${new Date().getFullYear()} Emerson Bossi. Built with Docusaurus.`,
+            },
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
