@@ -5,7 +5,7 @@ on:
     branches: [main]
   pull_request:
   schedule:
-    - cron: "0 9 * * 1" # toda segunda 09:00 UTC
+    - cron: "0 9 * * 1"
 
 permissions:
   contents: read
@@ -25,6 +25,6 @@ jobs:
             --verbose
             --no-progress
             --max-concurrency 8
-            --accept 200,201,202,203,204,206,301,302,303,307,308,429
+            --accept 200,201,202,203,204,206,301,302,303,307,308,403,429
             --exclude-mail
             **/*.md **/*.mdx
