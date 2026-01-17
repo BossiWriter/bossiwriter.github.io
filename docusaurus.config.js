@@ -44,6 +44,14 @@ const config = {
     locales: ['en'],
   },
 
+  scripts: [
+    {
+      src: 'https://umami-production-917b.up.railway.app/script.js',
+      defer: true,
+      'data-website-id': 'ad7dad75-18fa-489c-aa1a-a64d97948244',
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -67,6 +75,7 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
@@ -142,6 +151,7 @@ plugins: [
     },
   ],
 ],
+
 
 };
 
