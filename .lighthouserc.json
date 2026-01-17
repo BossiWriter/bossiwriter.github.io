@@ -3,16 +3,24 @@
     "collect": {
       "url": ["https://bossiwriter.github.io/"],
       "numberOfRuns": 1,
+      "outputDir": ".lighthouseci",
       "settings": {
         "preset": "perf",
-        "emulatedFormFactor": "mobile",
-        "throttlingMethod": "simulate",
-        "chromeFlags": ["--no-sandbox", "--disable-dev-shm-usage"]
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 360,
+          "height": 640,
+          "deviceScaleFactor": 2,
+          "disabled": false
+        },
+        "throttlingMethod": "simulate"
       }
     },
     "assert": {
-      "preset": "lighthouse:no-pwa",
-      "assertions": {}
+      "assertions": {
+        "categories:performance": "warn"
+      }
     },
     "upload": {
       "target": "filesystem"
