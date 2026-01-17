@@ -1,0 +1,124 @@
+name: Umami Daily Report
+
+on:
+  schedule:
+    # 12:00 UTC todo dia (09:00 no Brasil -03, geralmente)
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Fetch Umami stats and post to Issue
+        env:
+          UMAMI_URL: ${{ secrets.UMAMI_URL }}
+          UMAMI_USERNAME: ${{ secrets.UMAMI_USERNAME }}
+          UMAMI_PASSWORD: ${{ secrets.UMAMI_PASSWORD }}
+          UMAMI_WEBSITE_ID: ${{ secrets.UMAMI_WEBSITE_ID }}
+          UMAMI_ISSUE_NUMBER: ${{ secrets.UMAMI_ISSUE_NUMBER }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          node <<'NODE'
+          const UMAMI_URL = process.env.UMAMI_URL?.replace(/\/$/, "");
+          const USERNAME = process.env.UMAMI_USERNAME;
+          const PASSWORD = process.env.UMAMI_PASSWORD;
+          const WEBSITE_ID = process.env.UMAMI_WEBSITE_ID;
+          const ISSUE_NUMBER = Number(process.env.UMAMI_ISSUE_NUMBER || "1");
+          const GH_TOKEN = process.env.GH_TOKEN;
+          const REPO = process.env.GITHUB_REPOSITORY; // owner/repo
+
+          if (!UMAMI_URL || !USERNAME || !PASSWORD || !WEBSITE_ID || !GH_TOKEN || !REPO) {
+            console.error("Missing env vars. Check repository secrets and env wiring.");
+            process.exit(1);
+          }
+
+          async function fetchJson(url, options = {}) {
+            const res = await fetch(url, options);
+            const text = await res.text();
+            let json = null;
+            try { json = text ? JSON.parse(text) : null; } catch (e) {}
+            if (!res.ok) {
+              throw new Error(`${res.status} ${res.statusText}: ${text}`);
+            }
+            return json;
+          }
+
+          function toMs(date) { return date.getTime(); }
+
+          async function main() {
+            // 1) Login no Umami (self-host)
+            const login = await fetchJson(`${UMAMI_URL}/api/auth/login`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username: USERNAME, password: PASSWORD }),
+            });
+
+            const token = login?.token;
+            if (!token) throw new Error("Umami login succeeded but no token returned.");
+
+            // 2) Time range: últimas 24 horas
+            const now = new Date();
+            const start = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+            const params = new URLSearchParams({
+              startAt: String(toMs(start)),
+              endAt: String(toMs(now)),
+            });
+
+            // 3) Puxa métricas básicas
+            // Endpoint /api/websites/:id/stats costuma retornar: pageviews, visitors, visits, bounces, totaltime
+            const stats = await fetchJson(`${UMAMI_URL}/api/websites/${WEBSITE_ID}/stats?${params.toString()}`, {
+              headers: { Authorization: `Bearer ${token}` },
+            });
+
+            const pageviews = stats?.pageviews?.value ?? stats?.pageviews ?? 0;
+            const visitors  = stats?.visitors?.value  ?? stats?.visitors  ?? 0;
+            const visits    = stats?.visits?.value    ?? stats?.visits    ?? 0;
+            const bounces   = stats?.bounces?.value   ?? stats?.bounces   ?? 0;
+            const totaltime = stats?.totaltime?.value ?? stats?.totaltime ?? 0;
+
+            // 4) Monta o relatório
+            const lines = [];
+            lines.push(`## Umami report (last 24h)`);
+            lines.push(`- **Pageviews:** ${pageviews}`);
+            lines.push(`- **Unique visitors:** ${visitors}`);
+            lines.push(`- **Visits:** ${visits}`);
+            lines.push(`- **Bounces:** ${bounces}`);
+            lines.push(`- **Total time (sec):** ${totaltime}`);
+            lines.push("");
+            lines.push(`_Generated: ${now.toISOString()}_`);
+
+            const body = lines.join("\n");
+
+            // 5) Posta (ou atualiza) comentário no Issue
+            // Estratégia simples: sempre criar comentário novo.
+            // Se quiser “editar o último comentário do bot”, dá pra melhorar depois.
+            const comment = await fetchJson(`https://api.github.com/repos/${REPO}/issues/${ISSUE_NUMBER}/comments`, {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${GH_TOKEN}`,
+                "Accept": "application/vnd.github+json",
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ body }),
+            });
+
+            console.log("Comment created:", comment?.html_url || "(no url)");
+          }
+
+          main().catch((err) => {
+            console.error("Workflow failed:", err);
+            process.exit(1);
+          });
+          NODE
