@@ -4,7 +4,7 @@ slug: /about-me
 title: "About Me"
 ---
 
-Broken link test: https://example.com/this-page-should-404-12345
+Broken link test: https://httpstat.us/404
 
 ## Who I Am
 
