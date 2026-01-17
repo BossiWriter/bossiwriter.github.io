@@ -1,7 +1,3 @@
 {
-    "cSpell.words": [
-        "Bossi",
-        "bossiwriter",
-        "UEFI"
-    ]
+  "cSpell.configFile": "${workspaceFolder}/cspell.json"
 }
