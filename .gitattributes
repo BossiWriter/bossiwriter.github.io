@@ -1,0 +1,9 @@
+# bossiwriter.github.io/.gitattributes
+
+# Default: normalize text files to LF in the repository
+* text=auto eol=lf
+
+# Windows-specific scripts can keep CRLF if you ever add them
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
