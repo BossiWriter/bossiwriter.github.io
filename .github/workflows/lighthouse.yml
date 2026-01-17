@@ -1,15 +1,16 @@
 name: Lighthouse CI (report)
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 12 * * 1" # toda segunda 12:00 UTC (~09:00 Brasil -03)
   push:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   lighthouse:
@@ -31,9 +32,9 @@ jobs:
       - name: Run Lighthouse CI (report only)
         run: npx -y @lhci/cli@0.14.x autorun
 
-      - name: Upload Lighthouse artifacts
-        if: always()
+      - name: Upload Lighthouse reports
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouseci-report
+          name: lighthouse-report
           path: .lighthouseci
+          if-no-files-found: error
