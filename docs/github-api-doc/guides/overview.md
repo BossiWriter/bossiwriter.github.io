@@ -14,23 +14,23 @@ This is a technical documentation project focused on the GitHub REST API and bas
 
 ## GitHub REST API Overview
 
-| Resource | Details |
-| :--- | :--- |
-| **Base URL** | `https://api.github.com` |
+| Resource       | Details                       |
+| :------------- | :---------------------------- |
+| **Base URL**   | `https://api.github.com`      |
 | **Media Type** | `application/vnd.github+json` |
-| **Auth** | Personal Access Token (PAT) |
-| **Format** | JSON |
+| **Auth**       | Personal Access Token (PAT)   |
+| **Format**     | JSON                          |
 
 ---
 
 ## Learning Experiences
 
-* Creating tokens and authentication
-* Using paginated REST responses efficiently
-* Interpreting GitHub API errors and status codes
-* Validating requests against real API usage
-* Filtering useful JSON metadata from responses
-* Implementing the `GET` List Issues request into your workflow
+- Creating tokens and authentication
+- Using paginated REST responses efficiently
+- Interpreting GitHub API errors and status codes
+- Validating requests against real API usage
+- Filtering useful JSON metadata from responses
+- Implementing the `GET` List Issues request into your workflow
 
 ---
 
@@ -52,7 +52,7 @@ The scope currently avoids explanation that is unrelated to the endpoint. For in
 
 ---
 
-## How to Navigate 
+## How to Navigate
 
 If you already have a token and know how to use the GitHub REST API, skip directly to **`GET` List Issues** for a detailed documentation about the endpoint.
 
@@ -62,15 +62,15 @@ For further direction, follow:
 
 Quick Start → Authentication → Pagination → `GET` List Issues → Errors & Validation
 
-* **New users:** Start with the [Quick Start](./quick-start.md) to make your first authenticated request.
+- **New users:** Start with the [Quick Start](./quick-start.md) to make your first authenticated request.
 
-* **Authentication:** Learn how to secure your requests in the [Authentication](../guides/authentication.md) guide.
+- **Authentication:** Learn how to secure your requests in the [Authentication](../guides/authentication.md) guide.
 
-* **Pagination:** Understand how to handle large datasets in [Pagination](../guides/pagination.md).
+- **Pagination:** Understand how to handle large datasets in [Pagination](../guides/pagination.md).
 
-* **The Endpoint:** Visit [`GET` List Issues](../reference/endpoints/list-issues.md) for detailed parameter information.
+- **The Endpoint:** Visit [`GET` List Issues](../reference/endpoints/list-issues.md) for detailed parameter information.
 
-* **Troubleshooting:** Check [Validation and Sources](../guides/validation-and-sources.md) or [Errors and Status Codes](../guides/errors-and-status-codes.md) if you encounter issues.
+- **Troubleshooting:** Check [Validation and Sources](../guides/validation-and-sources.md) or [Errors and Status Codes](../guides/errors-and-status-codes.md) if you encounter issues.
 
 ---
 

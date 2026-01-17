@@ -15,10 +15,10 @@ sidebar_position: 2
 
 # Essential Linux Commands for Beginners: A Technical Reference
 
-* [1. File and Directory Management](#1-file-and-directory-management)
-* [2. File Operations](#2-file-operations)
-* [3. Viewing and Searching Content](#3-viewing-and-searching-content)
-* [4. System and Permissions](#4-system-and-permissions)
+- [1. File and Directory Management](#1-file-and-directory-management)
+- [2. File Operations](#2-file-operations)
+- [3. Viewing and Searching Content](#3-viewing-and-searching-content)
+- [4. System and Permissions](#4-system-and-permissions)
 
 ---
 
@@ -26,8 +26,8 @@ sidebar_position: 2
 
 To ensure clarity for the reader, this reference guide is defined by the following parameters:
 
-* **Scope:** Focused on file system navigation and basic Command Line Interface (CLI) usage.
-* **Non-Goals:** This document does not cover shell scripting, advanced permissions, or package management.
+- **Scope:** Focused on file system navigation and basic Command Line Interface (CLI) usage.
+- **Non-Goals:** This document does not cover shell scripting, advanced permissions, or package management.
 
 ## Overview
 
@@ -43,48 +43,49 @@ Examples will focus on the path `/home/username` for consistency.
 
 Lists all files and directories in the specified path or current directory.
 
-* **Usage:** `ls [options]`
+- **Usage:** `ls [options]`
 
-* **Example:** `ls /home/username/Desktop`
+- **Example:** `ls /home/username/Desktop`
 
 #### Common Flags for `ls`
 
-| Flag | Name | Description |
-| :--- | :--- | :--- |
-| **`-a`** | All | Shows all files, including hidden ones (starting with a dot). |
-| **`-l`** | Long | Displays detailed information (permissions, owner, size, and date). |
-| **`-h`** | Human-readable | When used with `-l`, it shows file sizes in KB, MB, or GB. |
-| **`-R`** | Recursive | Lists all files in the current directory and all subdirectories. |
+| Flag     | Name           | Description                                                         |
+| :------- | :------------- | :------------------------------------------------------------------ |
+| **`-a`** | All            | Shows all files, including hidden ones (starting with a dot).       |
+| **`-l`** | Long           | Displays detailed information (permissions, owner, size, and date). |
+| **`-h`** | Human-readable | When used with `-l`, it shows file sizes in KB, MB, or GB.          |
+| **`-R`** | Recursive      | Lists all files in the current directory and all subdirectories.    |
 
 :::tip
 You can combine flags. For example, `ls -lah` provides a detailed, human-readable list of all files.
 :::
 
 ### `cd` - Change Directory
+
 Navigates between different folders in the file system.
 
-* **Usage:** `cd [path]`
+- **Usage:** `cd [path]`
 
-* **Example:** `cd /home/username/Desktop`
+- **Example:** `cd /home/username/Desktop`
 
 ### `mkdir` - Make Directory
 
 Creates a new, empty directory.
 
-* **Usage:** `mkdir [directory_name]`
+- **Usage:** `mkdir [directory_name]`
 
-* **Example:** `mkdir /home/username/Desktop/NewDirectory`
+- **Example:** `mkdir /home/username/Desktop/NewDirectory`
 
 ---
 
 ## 2. File Operations
 
-| Command | Description | Basic Usage |
-| :--- | :--- | :--- |
-| **`cp`** | Copies files or directories from one location to another. | `cp source destination` |
-| **`mv`** | Moves or renames files and directories. | `mv old_name new_name` |
-| **`rm`** | Deletes files. Use with caution. | `rm file_name` |
-| **`touch`** | Creates a new empty file or updates the timestamp of an existing one. | `touch index.html` |
+| Command     | Description                                                           | Basic Usage             |
+| :---------- | :-------------------------------------------------------------------- | :---------------------- |
+| **`cp`**    | Copies files or directories from one location to another.             | `cp source destination` |
+| **`mv`**    | Moves or renames files and directories.                               | `mv old_name new_name`  |
+| **`rm`**    | Deletes files. Use with caution.                                      | `rm file_name`          |
+| **`touch`** | Creates a new empty file or updates the timestamp of an existing one. | `touch index.html`      |
 
 :::caution
 Files deleted with `rm` cannot be recovered.
@@ -98,13 +99,13 @@ Files deleted with `rm` cannot be recovered.
 
 Displays the entire content of a file directly in the terminal window.
 
-* **Usage:** `cat filename.txt`
+- **Usage:** `cat filename.txt`
 
 ### `grep` - Global Regular Expression Print
 
 Searches for text patterns within files.
 
-* **Usage:** `grep "index" /home/username/Desktop/NewDirectory/file_list.txt`
+- **Usage:** `grep "index" /home/username/Desktop/NewDirectory/file_list.txt`
 
 :::tip
 Combine `grep` with other commands using pipes to filter outputs (e.g., `ls /home/username/Desktop | grep ".png"`)
@@ -118,12 +119,12 @@ Combine `grep` with other commands using pipes to filter outputs (e.g., `ls /hom
 
 Executes a command with administrative (root) privileges.
 
-* **Usage:** `sudo [command]`
+- **Usage:** `sudo [command]`
 
-* **Example:** `sudo mkdir /home/username/Desktop/ProtectedFolder`
+- **Example:** `sudo mkdir /home/username/Desktop/ProtectedFolder`
 
 ### `man` - Manual
 
 Displays the official documentation manual for any command.
 
-* **Usage:** `man ls`
+- **Usage:** `man ls`

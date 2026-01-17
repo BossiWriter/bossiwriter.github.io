@@ -54,19 +54,20 @@ For additional information, see [Authentication](../guides/authentication.md).
 
 ```bash
 curl -i -H "Authorization: Bearer <TOKEN>" "https://api.github.com/repos/facebook/react/issues?per_page=1&page=1"
-  ```
+```
 
   </TabItem>
 
   <TabItem value="powershell" label="PowerShell">
 
-  ```powershell
-  $headers = @{
-    Authorization = "Bearer <TOKEN>"
-    Accept        = "application/vnd.github+json"
-              }
+```powershell
+$headers = @{
+  Authorization = "Bearer <TOKEN>"
+  Accept        = "application/vnd.github+json"
+            }
 Invoke-RestMethod -Uri "https://api.github.com/repos/facebook/react/issues?per_page=1&page=1" -Headers $headers
 ```
+
   </TabItem>
 </Tabs>
 

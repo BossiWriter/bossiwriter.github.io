@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "format": "prettier --write \"**/*.{md,mdx}\"",
+    "format:check": "prettier --check \"**/*.{md,mdx}\"",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
@@ -26,7 +28,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/types": "3.9.2",
-    "@easyops-cn/docusaurus-search-local": "^0.52.2"
+    "@easyops-cn/docusaurus-search-local": "^0.52.2",
+    "prettier": "^3.8.0"
   },
   "browserslist": {
     "production": [

@@ -67,7 +67,7 @@ Due to Windows 11 design restrictions, changing the default browser for widgets 
 To change the default browser for widgets, a free external software is required.
 
 :::note
-The following steps require a third-party tool that may stop working after major Windows updates. 
+The following steps require a third-party tool that may stop working after major Windows updates.
 :::
 
 1. Download the [**EdgeDeflector**](https://github.com/da2x/EdgeDeflector/releases) installer.

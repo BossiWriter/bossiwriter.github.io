@@ -26,19 +26,20 @@ During practical testing, non-numeric invalid `per_page` values returned `200 OK
 
 ## Practical Validation
 
-* **Authentication:** Confirmed that a `Bearer` token is required for consistent access, increased rate limits, and permission verification.
+- **Authentication:** Confirmed that a `Bearer` token is required for consistent access, increased rate limits, and permission verification.
 
-* **Pagination:** Verified that the `per_page` parameter correctly limits the JSON array size returned by the server.
+- **Pagination:** Verified that the `per_page` parameter correctly limits the JSON array size returned by the server.
 
-* **Query Parameters:** Confirmed that the `state` filter successfully alternates between `open` and `closed` issues.
+- **Query Parameters:** Confirmed that the `state` filter successfully alternates between `open` and `closed` issues.
 
-* **Response Structure:** Validated that the API returns a JSON list (array) of objects with consistent fields such as `number`, `title`, and `state`.
+- **Response Structure:** Validated that the API returns a JSON list (array) of objects with consistent fields such as `number`, `title`, and `state`.
 
-* **Pull Requests:** Confirmed that Pull Requests are returned as part of the issues list, identified by a `pull_request` object within the response.
+- **Pull Requests:** Confirmed that Pull Requests are returned as part of the issues list, identified by a `pull_request` object within the response.
 
-* **Status Codes:** Verified common HTTP status codes, including `200 OK` for successful requests and `404 Not Found` for invalid repositories.
+- **Status Codes:** Verified common HTTP status codes, including `200 OK` for successful requests and `404 Not Found` for invalid repositories.
 
 ---
 
 ## Scope
+
 This validation focuses on the core functionality of listing issues. Complex edge cases, such as enterprise-specific repository behaviors or legacy API versions, are currently outside the scope of this project.

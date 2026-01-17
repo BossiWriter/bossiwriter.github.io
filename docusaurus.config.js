@@ -113,8 +113,8 @@ const config = {
       items: [
         { label: 'Start Here', to: '/' },
         { label: 'GitHub API Docs', to: '/github-api-doc/guides/overview' },
-        { label: 'Case Studies', to: '/case-studies/behind-the-docs' },
-        { label: 'Technical Documentation', to: '/documentation-samples' },
+        { label: 'Case Studies', to: '/behind-the-docs' },
+        { label: 'Technical Documentation', to: '/secureboot-troubleshooting' },
       ],
     },
     {

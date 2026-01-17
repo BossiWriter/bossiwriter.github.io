@@ -25,12 +25,12 @@ This was written in 2022. Instructions and information might be outdated.
 
 ## Table of Contents
 
-* [1. Issue Description](#1-issue-description)
-* [2. Diagnostics: Checking System State](#2-diagnostics-checking-system-state)
-* [3. Root Cause: Legacy Partition Styles](#3-root-cause-legacy-partition-styles)
-* [4. MBR to GPT Partition Conversion](#4-mbr-to-gpt-partition-conversion)
-* [5. Enabling Secure Boot in UEFI](#5-enabling-secure-boot-in-uefi)
-* [6. Verification](#6-verification)
+- [1. Issue Description](#1-issue-description)
+- [2. Diagnostics: Checking System State](#2-diagnostics-checking-system-state)
+- [3. Root Cause: Legacy Partition Styles](#3-root-cause-legacy-partition-styles)
+- [4. MBR to GPT Partition Conversion](#4-mbr-to-gpt-partition-conversion)
+- [5. Enabling Secure Boot in UEFI](#5-enabling-secure-boot-in-uefi)
+- [6. Verification](#6-verification)
 
 ---
 
@@ -44,7 +44,7 @@ The error can be due to a disabled BIOS setting or an outdated partition style (
 
 ## 2. Diagnostics: Checking System State
 
-Before making changes, verify whether or not the issue is related to  **Secure Boot.**
+Before making changes, verify whether or not the issue is related to **Secure Boot.**
 
 1. Select the **Start** button.
 
@@ -58,15 +58,15 @@ Before making changes, verify whether or not the issue is related to  **Secure B
 
 6. Search for **BIOS Mode** on the **Item** column to the right.
 
-
 :::note
 **Logic Check:**
-* If **Secure Boot State** is **On** and **BIOS Mode** is **UEFI**, the installation error is **not** related to Secure Boot. You should investigate TPM 2.0 or other hardware requirements.
-* If **BIOS Mode** is **Legacy**, follow the disk conversion steps before attempting to enable Secure Boot.
-* If **Secure Boot State** is **Off** and **BIOS Mode** is **UEFI**, follow the instructions below to enable it.
-:::
 
-```mermaid 
+- If **Secure Boot State** is **On** and **BIOS Mode** is **UEFI**, the installation error is **not** related to Secure Boot. You should investigate TPM 2.0 or other hardware requirements.
+- If **BIOS Mode** is **Legacy**, follow the disk conversion steps before attempting to enable Secure Boot.
+- If **Secure Boot State** is **Off** and **BIOS Mode** is **UEFI**, follow the instructions below to enable it.
+  :::
+
+```mermaid
 graph TD
     A[Start Diagnostics] --> B{BIOS Mode?}
     B -- Legacy --> C[Convert MBR to GPT]
@@ -77,7 +77,7 @@ graph TD
     D --> G[Enable Secure Boot]
     G --> H[Final Verification]
     H --> I[Ready for Windows 11]
- ```
+```
 
 ---
 
@@ -85,7 +85,7 @@ graph TD
 
 Before enabling **Secure Boot**, you need the correct partition style on your drive.
 
-If  **BIOS Mode** is listed as **Legacy**, the disk is likely using the **MBR (Master Boot Record)** partition style.
+If **BIOS Mode** is listed as **Legacy**, the disk is likely using the **MBR (Master Boot Record)** partition style.
 
 Modern **Secure Boot** requires the **GPT (GUID Partition Table)** style. You must convert the disk before enabling **Secure Boot** in the BIOS.
 
@@ -127,7 +127,7 @@ Enabling Secure Boot requires accessing the motherboard's BIOS/UEFI settings. An
 
 4. Under **Advanced Startup**, select **Restart now**.
 
-5. Select  **UEFI Firmware Settings**.
+5. Select **UEFI Firmware Settings**.
 
 6. Select **Restart**.
 
@@ -151,9 +151,9 @@ You can also manually access the BIOS by pressing the BIOS key when booting up (
 
 After the system reboots, repeat the diagnostic steps from [2. Diagnostics: Checking System State](#2-diagnostics-checking-system-state) to check if the information now matches the requirements.
 
-| Requirement | Expected Value |
-| :--- | :--- |
-| **BIOS Mode** | UEFI |
-| **Secure Boot State** | On |
+| Requirement           | Expected Value |
+| :-------------------- | :------------- |
+| **BIOS Mode**         | UEFI           |
+| **Secure Boot State** | On             |
 
 If all values match the table, then the system is fully configured to support Windows 11 installation.

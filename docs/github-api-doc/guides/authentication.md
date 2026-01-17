@@ -21,11 +21,11 @@ This authentication is targeted at making authenticated requests to issue endpoi
 
 ## Why Authenticate?
 
-* **Increased Rate Limits:** Unauthenticated requests are limited to **60 per hour per IP**. With a PAT, the rate limit is raised to **5,000 per hour per user**.
+- **Increased Rate Limits:** Unauthenticated requests are limited to **60 per hour per IP**. With a PAT, the rate limit is raised to **5,000 per hour per user**.
 
-* **Private Access:** Authentication is required to list issues from private repositories, among other operations.
+- **Private Access:** Authentication is required to list issues from private repositories, among other operations.
 
-* **Increased Security:** Proper authorization ensures only users with secure access can perform specific actions on repositories.
+- **Increased Security:** Proper authorization ensures only users with secure access can perform specific actions on repositories.
 
 ---
 
@@ -100,6 +100,7 @@ If a token is invalid or expired, the request will return a `401 Unauthorized` e
 ---
 
 ## Token Scope
+
 While the scope may change in the future with a project expansion, the current version uses a fine-grained PAT with access limited to:
 
 - Public repositories

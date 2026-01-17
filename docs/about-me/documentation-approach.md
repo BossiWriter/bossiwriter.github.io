@@ -51,7 +51,8 @@ This documentation was built with modularity for scalability. So there are multi
 So instead of making readers click through a lot of folders, I decided to have it expanded and set it as the featured in the sidebar to highlight it.
 
 ### Why did you pick these samples?
-The current list of samples is short and objective. They were projects I had already written, and some even published. 
+
+The current list of samples is short and objective. They were projects I had already written, and some even published.
 
 So converting them to Markdown using docs-as-code was faster than creating documentation from scratch.
 

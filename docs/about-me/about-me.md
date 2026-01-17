@@ -16,7 +16,7 @@ I'm Emerson Bossi, a bilingual (PT-BR/EN) technical writer and IT professional w
 
 **Docs-as-code:** I'm really comfortable working with documentation through Git workflows, versioning, and Markdown formatting an structuring.
 
-## My Career Path 
+## My Career Path
 
 I first started working in customer support. Then I transitioned into IT and Tech Support along with my Computer Science education. This mix of experiences helped me develop strong technical skills, like Root Cause Analysis, that allowed me to solve complex issues for end-users.
 
