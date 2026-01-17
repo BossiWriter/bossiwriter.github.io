@@ -1,13 +1,13 @@
 ---
-title: "How to Set Chrome as Default Browser on Windows 11"
-category: "User Guide / How-to"
-author: "Emerson Bossi"
-content_type: "Step-by-Step Tutorial"
-requirements: ["Windows 11", "Google Chrome"]
-third_party_tools: ["EdgeDeflector"]
-audience: ["End-users"]
-risk_level: "Low"
-sidebar_label: "Chrome Default Setup Guide"
+title: 'How to Set Chrome as Default Browser on Windows 11'
+category: 'User Guide / How-to'
+author: 'Emerson Bossi'
+content_type: 'Step-by-Step Tutorial'
+requirements: ['Windows 11', 'Google Chrome']
+third_party_tools: ['EdgeDeflector']
+audience: ['End-users']
+risk_level: 'Low'
+sidebar_label: 'Chrome Default Setup Guide'
 sidebar_position: 3
 slug: /default-chrome
 ---

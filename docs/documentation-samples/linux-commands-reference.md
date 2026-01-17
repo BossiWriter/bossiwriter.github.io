@@ -1,14 +1,14 @@
 ---
-title: "Essential Linux Commands for Beginners: A Technical Reference"
-category: "Technical Reference / CLI Basics"
-author: "Emerson Bossi"
-original_publication: "https://linuxhit.com/top-basic-linux-commands-for-beginners/"
-topics: ["Basic Linux Commands", "CLI", "Terminal"]
-format: "Markdown Adaptation"
-difficulty: "Beginner"
-scope: "File system navigation and basic CLI usage"
-non_goals: ["Shell scripting", "Advanced permissions", "Package management"]
-sidebar_label: "Linux Reference"
+title: 'Essential Linux Commands for Beginners: A Technical Reference'
+category: 'Technical Reference / CLI Basics'
+author: 'Emerson Bossi'
+original_publication: 'https://linuxhit.com/top-basic-linux-commands-for-beginners/'
+topics: ['Basic Linux Commands', 'CLI', 'Terminal']
+format: 'Markdown Adaptation'
+difficulty: 'Beginner'
+scope: 'File system navigation and basic CLI usage'
+non_goals: ['Shell scripting', 'Advanced permissions', 'Package management']
+sidebar_label: 'Linux Reference'
 slug: /linux-reference
 sidebar_position: 2
 ---

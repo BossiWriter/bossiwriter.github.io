@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
-sidebar_label: "Errors and Status Codes"
-title: "Errors and Status Codes"
+sidebar_label: 'Errors and Status Codes'
+title: 'Errors and Status Codes'
 ---
 
 import Tabs from '@theme/Tabs';

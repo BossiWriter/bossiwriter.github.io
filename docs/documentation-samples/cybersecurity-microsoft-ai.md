@@ -1,13 +1,13 @@
 ---
-title: "Microsoft’s AI-Driven Cybersecurity: Strategies, Roles, and Career Path"
-category: "Industry Research & Career Roadmap"
-author: "Emerson Bossi"
-original_source: "https://happytechies.com/perspectives/upskilling-for-the-future-microsoft-s-ai-driven-cybersecurity-solutions-and-career-opportunities"
-focus: "Markdown Adaptation"
-tags: ["AI", "Cybersecurity", "Microsoft", "Career"]
-audience: ["IT professionals", "Security practitioners", "Career switchers"]
-content_type: "Industry Research / Career Guide"
-sidebar_label: "AI Cybersecurity Research"
+title: 'Microsoft’s AI-Driven Cybersecurity: Strategies, Roles, and Career Path'
+category: 'Industry Research & Career Roadmap'
+author: 'Emerson Bossi'
+original_source: 'https://happytechies.com/perspectives/upskilling-for-the-future-microsoft-s-ai-driven-cybersecurity-solutions-and-career-opportunities'
+focus: 'Markdown Adaptation'
+tags: ['AI', 'Cybersecurity', 'Microsoft', 'Career']
+audience: ['IT professionals', 'Security practitioners', 'Career switchers']
+content_type: 'Industry Research / Career Guide'
+sidebar_label: 'AI Cybersecurity Research'
 slug: /cybersecurity-microsoft
 sidebar_position: 4
 ---

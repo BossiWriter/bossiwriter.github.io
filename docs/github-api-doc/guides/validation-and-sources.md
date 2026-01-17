@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
-sidebar_label: "Validation and Sources"
-title: "Validation and Sources"
+sidebar_label: 'Validation and Sources'
+title: 'Validation and Sources'
 ---
 
 This documentation was created using a combination of official GitHub references and practical validation to ensure technical accuracy.

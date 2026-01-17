@@ -1,5 +1,5 @@
 ---
-sidebar_label: "List Issues"
+sidebar_label: 'List Issues'
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
-sidebar_label: "Pagination"
-title: "Pagination"
+sidebar_label: 'Pagination'
+title: 'Pagination'
 ---
 
 The GitHub REST API uses pagination to split large request results into smaller data blocks. When results are split into pages, responses become faster to process, making navigation easier for clients while keeping endpoints from being overwhelmed.

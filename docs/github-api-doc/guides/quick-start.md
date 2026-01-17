@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
-sidebar_label: "Quick Start"
-title: "Quick Start"
+sidebar_label: 'Quick Start'
+title: 'Quick Start'
 slug: /quick-start
 ---
 

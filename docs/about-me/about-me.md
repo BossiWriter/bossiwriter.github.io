@@ -1,7 +1,7 @@
 ---
-sidebar_label: "About Me"
+sidebar_label: 'About Me'
 slug: /about-me
-title: "About Me"
+title: 'About Me'
 ---
 
 ## Who I Am

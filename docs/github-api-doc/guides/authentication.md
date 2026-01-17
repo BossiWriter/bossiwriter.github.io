@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-sidebar_label: "Authentication"
-title: "Authentication"
+sidebar_label: 'Authentication'
+title: 'Authentication'
 ---
 
 import Tabs from '@theme/Tabs';

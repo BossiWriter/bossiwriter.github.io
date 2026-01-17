@@ -1,7 +1,7 @@
 ---
-sidebar_label: "Documentation Approach"
+sidebar_label: 'Documentation Approach'
 slug: /documentation-approach
-title: "Documentation Approach"
+title: 'Documentation Approach'
 ---
 
 My approach to documentation is different from the other content creation methods I use for SEO content writing or fictional writing.
