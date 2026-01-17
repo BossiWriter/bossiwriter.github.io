@@ -1,29 +1,21 @@
 {
   "ci": {
     "collect": {
+      "url": ["https://bossiwriter.github.io/"],
       "numberOfRuns": 1,
-      "url": [
-        "https://bossiwriter.github.io/",
-        "https://bossiwriter.github.io/docs/intro",
-        "https://bossiwriter.github.io/docs/about-me/about-me",
-        "https://bossiwriter.github.io/docs/case-studies/behind-the-docs",
-        "https://bossiwriter.github.io/docs/github-api-doc/guides/quick-start"
-      ],
       "settings": {
-        "preset": "mobile",
+        "preset": "perf",
+        "emulatedFormFactor": "mobile",
+        "throttlingMethod": "simulate",
         "chromeFlags": ["--no-sandbox", "--disable-dev-shm-usage"]
       }
     },
     "assert": {
-      "assertions": {
-        "categories:performance": "off",
-        "categories:accessibility": "off",
-        "categories:best-practices": "off",
-        "categories:seo": "off"
-      }
+      "preset": "lighthouse:no-pwa",
+      "assertions": {}
     },
     "upload": {
-      "target": "temporary-public-storage"
+      "target": "filesystem"
     }
   }
 }
