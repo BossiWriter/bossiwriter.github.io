@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 12:00 UTC = ~09:00 Brasil (-03) na maior parte do ano
+    - cron: "0 12 * * 1"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -30,11 +33,24 @@ jobs:
         run: npm ci
 
       - name: Run Lighthouse CI (report only)
-        run: npx -y @lhci/cli@0.14.x autorun
+        run: |
+          npx -y @lhci/cli@0.14.x autorun \
+            --config=./.lighthouserc.json \
+            --upload.target=filesystem \
+            --upload.outputDir=.lighthouseci
+
+      - name: Debug - list Lighthouse output
+        run: |
+          echo "== workspace =="
+          ls -la
+          echo "== .lighthouseci =="
+          ls -la .lighthouseci || true
+          echo "== files =="
+          find .lighthouseci -type f -maxdepth 3 -print || true
 
       - name: Upload Lighthouse reports
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
-          path: .lighthouseci
+          path: .lighthouseci/**
           if-no-files-found: error
