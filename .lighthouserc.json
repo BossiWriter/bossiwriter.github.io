@@ -23,7 +23,8 @@
       }
     },
     "upload": {
-      "target": "filesystem"
+      "target": "filesystem",
+      "outputDir": ".lighthouseci"
     }
   }
 }

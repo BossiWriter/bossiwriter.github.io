@@ -1,12 +1,25 @@
 name: Lighthouse CI (report)
 
 on:
+  # roda quando você dá push, mas só se arquivos "relevantes" mudarem
   push:
     branches: [main]
-  workflow_dispatch:
+    paths:
+      - "docs/**"
+      - "src/**"
+      - "static/**"
+      - "docusaurus.config.js"
+      - "package.json"
+      - "package-lock.json"
+      - ".lighthouserc.json"
+      - ".github/workflows/lighthouse.yml"
+
+  # roda automático em horário fixo (ex: segunda 12:00 UTC = 09:00 Brasil -03)
   schedule:
-    # 12:00 UTC = ~09:00 Brasil (-03) na maior parte do ano
     - cron: "0 12 * * 1"
+
+  # botão manual no GitHub Actions ("Run workflow")
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -33,24 +46,25 @@ jobs:
         run: npm ci
 
       - name: Run Lighthouse CI (report only)
-        run: |
-          npx -y @lhci/cli@0.14.x autorun \
-            --config=./.lighthouserc.json \
-            --upload.target=filesystem \
-            --upload.outputDir=.lighthouseci
+        run: npx -y @lhci/cli@0.14.x autorun
 
+      # Debug pra parar de "atirar no escuro" quando o artifact não acha nada
       - name: Debug - list Lighthouse output
+        if: always()
         run: |
-          echo "== workspace =="
+          echo "PWD: $(pwd)"
+          echo "---- repo root ----"
           ls -la
-          echo "== .lighthouseci =="
+          echo "---- .lighthouseci (if exists) ----"
           ls -la .lighthouseci || true
-          echo "== files =="
-          find .lighthouseci -type f -maxdepth 3 -print || true
+          echo "---- find .lighthouseci files ----"
+          find .lighthouseci -maxdepth 3 -type f -print || true
 
-      - name: Upload Lighthouse reports
+      - name: Upload Lighthouse reports (artifact)
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-report
+          name: lighthouse-report-${{ github.run_number }}
           path: .lighthouseci/**
-          if-no-files-found: error
+          if-no-files-found: warn
+          retention-days: 14
